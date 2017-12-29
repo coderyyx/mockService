@@ -1,10 +1,11 @@
 var express = require("express");
-
+var fs=require('fs');
+var path = require("path");
 var router = express.Router();
 
 var handler = require('../controller/handler.js');
 
-var files = fs.readdirSync(__dirname + '/controller');
+var files = fs.readdirSync(path.join(__dirname,"../controller"));
 
 var js_files = files.filter((f)=>{
     return f.endsWith('.js');
