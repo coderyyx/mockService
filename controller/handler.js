@@ -12,11 +12,19 @@ function getDisease(req,res){
     res.send(data);
 }
 
+function getzhuanzhenList(req,res){
+    var data = require('../mockJson/zzSearch');
+    res.send(JSON.stringify(data));
+}
+
 module.exports = [
     {
         method:'get',url:'/applySubmit',handler:applySubmit
     },
     {
         method:'post',url:'/genetic/getDiseases',handler:getDisease
+    },
+    {
+        method:'get',url:'/zl/zzList',handler:getzhuanzhenList
     }
 ]
