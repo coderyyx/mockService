@@ -1,6 +1,6 @@
 var express = require("express");
 var app=express();
-
+const port  = 8084;
 //Router
 var router = require('./router/router.js');
 
@@ -12,4 +12,5 @@ app.use(function (req, res, next) {
 
 app.use(router);
 
-app.listen(8084);
+app.listen(port);
+console.log(`listen on ${port},open browser on localhost:${port}`)
