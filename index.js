@@ -9,7 +9,11 @@ app.use(function (req, res, next) {
     console.log('Time: %d', Date.now());
     next();
   })
-
+app.all("*",function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    next();
+  })
+  
 app.use(router);
 
 app.listen(port);
